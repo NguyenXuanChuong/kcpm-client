@@ -42,7 +42,7 @@ namespace Cookbook.Controllers
 
             try
             {
-                var json = client.DownloadString(String.Format("http://apig5.gear.host/api/NguoiDung/Get/{0}", id));
+                var json = client.DownloadString(String.Format("http://server-20.apphb.com/api/NguoiDung/Get/{0}", id));
                 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
                 dynamic model = serializer.Deserialize<dynamic>(json);
 

@@ -31,7 +31,7 @@ namespace Cookbook.Controllers
                     id = int.Parse(ViewData["MaMonAn"].ToString());
                 }
                 WebClient client = new WebClient();
-                var json = client.DownloadString("http://apig5.gear.host/api/MonAn/LayMonAn/" + id.ToString());
+                var json = client.DownloadString("http://server-20.apphb.com/api/MonAn/LayMonAn/" + id.ToString());
                 json = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, System.Text.Encoding.Default.GetBytes(json)));
                 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
                 dynamic model = serializer.Deserialize<dynamic>(json);
@@ -93,7 +93,7 @@ namespace Cookbook.Controllers
 
           //  ViewData["MaMonAn"] = id;
             WebClient client = new WebClient();
-            var json = client.DownloadString("http://apig5.gear.host/api/MonAn/LayMonAn/" + id.ToString());
+            var json = client.DownloadString("http://server-20.apphb.com/api/MonAn/LayMonAn/" + id.ToString());
             json = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, System.Text.Encoding.Default.GetBytes(json)));
             var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             dynamic model = serializer.Deserialize<dynamic>(json);
